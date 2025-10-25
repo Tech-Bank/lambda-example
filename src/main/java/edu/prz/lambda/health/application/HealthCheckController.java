@@ -1,4 +1,4 @@
-package edu.prz.lambda.health;
+package edu.prz.lambda.health.application;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
