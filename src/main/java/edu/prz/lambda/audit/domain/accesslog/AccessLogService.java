@@ -10,10 +10,9 @@ public class AccessLogService {
 
   final AccessLogRepository repository;
 
-  public void add() {
-    AccessLog accessLog = new AccessLog();
-    accessLog.setAccessTime(LocalDateTime.now());
-    repository.save(accessLog);
+  public void add(AccessLog entity) {
+    entity.setAccessTime(LocalDateTime.now());
+    repository.save(entity);
   }
 
 }

@@ -1,7 +1,8 @@
 package edu.prz.lambda.audit.domain.accesslog;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.UUID;
+import org.springframework.data.cassandra.repository.CassandraRepository;
 
-public interface AccessLogRepository extends JpaRepository<AccessLog, Long> {
+public interface AccessLogRepository extends CassandraRepository<AccessLog, UUID> {
 
 }

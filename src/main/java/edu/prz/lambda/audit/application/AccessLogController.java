@@ -6,13 +6,10 @@ import edu.prz.lambda.audit.domain.accesslog.AccessLogService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("access-log")
+@RequestMapping("/api/access-log")
 @RequiredArgsConstructor
 public class AccessLogController {
 
@@ -20,8 +17,8 @@ public class AccessLogController {
   final AccessLogRepository repository;
 
   @PostMapping
-  public ResponseEntity<Void> add() {
-    service.add();
+  public ResponseEntity<Void> add(@RequestBody AccessLog entity) {
+    service.add(entity);
     return ResponseEntity.noContent().build();
   }
 
